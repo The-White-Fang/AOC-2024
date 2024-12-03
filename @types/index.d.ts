@@ -1,0 +1,1 @@
+type InputType = 'sample' | 'input';

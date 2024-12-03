@@ -1,7 +1,7 @@
 import FS from 'fs/promises';
 import path from 'path';
 
-async function get_lists(input_file: 'sample' | 'input') {
+async function get_lists(input_file: InputType) {
 	const input = await FS.readFile(path.join(__dirname, input_file), 'utf-8');
 
 	const input_array = input.split('\n').map(function (line) {
@@ -21,7 +21,7 @@ async function get_lists(input_file: 'sample' | 'input') {
 	};
 }
 
-async function part_1(input_file: 'sample' | 'input') {
+async function part_1(input_file: InputType) {
 	const { list_1, list_2 } = await get_lists(input_file);
 
 	return list_1.reduce(function (acc, curr, idx) {
@@ -30,7 +30,7 @@ async function part_1(input_file: 'sample' | 'input') {
 	}, 0);
 }
 
-async function part_2(input_file: 'sample' | 'input') {
+async function part_2(input_file: InputType) {
 	const { list_1, list_2 } = await get_lists(input_file);
 
 	return list_1.reduce(function (acc, curr) {
