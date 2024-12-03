@@ -1,1 +1,1 @@
-# Advent Of Code Solutions
+# Advent Of Code Solutions (using typescript)
