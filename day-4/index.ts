@@ -17,13 +17,13 @@ async function get_lists(input_file: InputType) {
 function get_count_start_from(i: number, j: number, input: string[][]) {
 	const char = input[i][j];
 	let word_horizontal = char,
-		word_vertcal = char,
+		word_vertical = char,
 		word_across_right = char,
 		word_across_left = char;
 
 	for (let idx = 1; idx < 4; idx++) {
 		word_horizontal += input[i]?.[j + idx] ?? '';
-		word_vertcal += input[i + idx]?.[j] ?? '';
+		word_vertical += input[i + idx]?.[j] ?? '';
 		word_across_right += input[i + idx]?.[j + idx] ?? '';
 		word_across_left += input[i - idx]?.[j + idx] ?? '';
 	}
@@ -34,7 +34,7 @@ function get_count_start_from(i: number, j: number, input: string[][]) {
 		count++;
 	}
 
-	if (word_vertcal.length === 4 && (word_vertcal === 'XMAS' || word_vertcal === 'SAMX')) {
+	if (word_vertical.length === 4 && (word_vertical === 'XMAS' || word_vertical === 'SAMX')) {
 		count++;
 	}
 
